@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('rol', ['admin', 'usuario'])->default('usuario'); //añadir los roles de usuarios
+            $table->enum('rol', ['admin', 'user'])->default('user'); //añadir los roles de usuarios
             $table->rememberToken();
             $table->timestamps();
         });

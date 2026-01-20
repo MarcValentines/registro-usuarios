@@ -19,7 +19,7 @@ Route::post('/register', [AuthController::class, 'register']);
 //rutas protegidas (usuario autenticado)
 
 Route::middleware('auth')->group(function() {
-    Route::get('/profile', function() {
+    Route::get('/perfil', function() {
         return view('profile');
     });
 
@@ -29,5 +29,5 @@ Route::middleware('auth')->group(function() {
 //Rutas protegidas admin
 
 Route::middleware(['auth', AdminMiddleware::class])->group(function() {
-    Route::get('/users', [UserController::class, 'index']);
+    Route::get('admin/users', [UserController::class, 'index']);
 });
